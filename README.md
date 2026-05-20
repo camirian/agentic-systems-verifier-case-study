@@ -45,6 +45,14 @@ The public takeaway is the pattern, not a full implementation dump.
 - A web-facing mission-control style interface.
 - Batch-style processing of technical source material.
 
+## Primary User
+
+The primary user is a technical reviewer, systems engineer, or portfolio reviewer who needs to understand whether the demonstrated verifier pattern keeps evidence visible while preserving a public release boundary. The job-to-be-done is to assess the workflow shape without requiring access to private source material. A success signal is that the reviewer can explain the problem, architecture pattern, human-review role, and excluded materials from the public docs alone.
+
+## Repo Verification Path
+
+This repo is documentation-only. The quickstart for local review is to read `README.md`, `docs/CASE_STUDY.md`, and `docs/RELEASE_BOUNDARY.md`, then run the pre-release verification command documented in `VERIFICATION_PLAN.md` before publishing changes.
+
 ## What Is Not Included
 
 - Original source code.
