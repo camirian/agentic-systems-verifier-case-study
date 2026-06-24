@@ -102,7 +102,7 @@ def main() -> int:
         return 1
 
     print(f"\nPASS: {n_files} text file(s) checked; "
-          "all internal references resolve and no forbidden patterns found.")
+          "all internal markdown links resolve and no forbidden patterns found.")
     return 0
 
 

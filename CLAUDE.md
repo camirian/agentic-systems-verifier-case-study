@@ -58,8 +58,8 @@ lives at `scripts/verify_public.py` and is the runnable verification path:
 python3 scripts/verify_public.py
 ```
 
-It resolves internal markdown links / file references and scans for forbidden
-patterns (`.env`, credentials, API keys). It exits non-zero on failure. Run it
+It resolves internal markdown links and scans for forbidden patterns (`.env`,
+credentials, API keys). It exits non-zero on failure. Run it
 after any doc change, then complete the manual boundary review in
 `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` before publishing.
 

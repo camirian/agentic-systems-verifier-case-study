@@ -341,7 +341,7 @@ documented release gate at it.
 ### What it changes
 
 - Add `scripts/verify_public.py` (Python stdlib only): resolves every internal
-  markdown link / relative file reference and fails on missing targets; scans
+  markdown link and fails on missing targets; scans
   tracked text files for forbidden patterns (`.env` contents, API keys,
   credentials); exits non-zero on any failure.
 - Repoint `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` from the missing
