@@ -2,11 +2,15 @@
 
 ## Checks
 
-Run the public-export gate before publishing changes:
+Run the self-contained public-export gate before publishing changes:
 
 ```bash
-python3 repo_preflight.py --repo . --profile public-export --paranoid
+python3 scripts/verify_public.py
 ```
+
+This stdlib-only script resolves internal markdown links and scans tracked text
+files for forbidden patterns (`.env` contents, credentials, API keys). It exits
+non-zero on any failure. Treat a non-zero exit as a release blocker.
 
 Manual review:
 
