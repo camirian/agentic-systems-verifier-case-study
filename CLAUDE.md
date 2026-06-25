@@ -29,7 +29,6 @@ credentials, and no build logs** in this repo (`README.md:5`,
 - `SECURITY.md` — public data boundary and private reporting policy.
 - `AGENTS.md` — agent rules (read this first; see below).
 - `LICENSE` — all rights reserved; published for portfolio review only.
-- `.github/dependabot.yml` — weekly github-actions update checks.
 - `.gitignore` — ignores `.env*`, caches, build/dist, `node_modules`, `*.log`.
 
 ## Agent rules (from `AGENTS.md` — authoritative)
