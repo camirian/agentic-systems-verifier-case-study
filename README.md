@@ -51,7 +51,13 @@ The primary user is a technical reviewer, systems engineer, or portfolio reviewe
 
 ## Repo Verification Path
 
-This repo is documentation-only. The quickstart for local review is to read `README.md`, `docs/CASE_STUDY.md`, and `docs/RELEASE_BOUNDARY.md`, then run the pre-release verification command documented in `VERIFICATION_PLAN.md` before publishing changes.
+This repo is documentation-only (plus one stdlib verification script). The quickstart for local review is to read `README.md`, `docs/CASE_STUDY.md`, and `docs/RELEASE_BOUNDARY.md`, then run the self-contained pre-release gate before publishing changes:
+
+```bash
+python3 scripts/verify_public.py
+```
+
+It resolves internal markdown links and scans for forbidden patterns; see `VERIFICATION_PLAN.md` for the full check list.
 
 ## What Is Not Included
 
