@@ -39,11 +39,18 @@ The public takeaway is the pattern, not a full implementation dump.
 
 ## What Was Demonstrated
 
+The behavior below was shown in the linked demo. This repository documents the
+pattern; it does not republish the implementation, so these are descriptions of
+demonstrated behavior, not benchmarked metrics.
+
 - Agentic decomposition of a systems-engineering review task.
 - Retrieval-augmented evidence grounding.
 - LLM-as-reviewer scoring for faithfulness-style checks.
 - A web-facing mission-control style interface.
 - Batch-style processing of technical source material.
+
+For what is intentionally left out, see [What Is Not Included](#what-is-not-included)
+and [docs/RELEASE_BOUNDARY.md](docs/RELEASE_BOUNDARY.md).
 
 ## Primary User
 
