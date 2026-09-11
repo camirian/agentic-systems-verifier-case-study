@@ -33,4 +33,6 @@ The project explored an agentic review workflow for this problem. The public les
 
 ## Public Outcome
 
-The public artifact is this case study plus the demo video. The released material focuses on the reusable engineering pattern and omits implementation details that require separate review.
+The public artifact is this case study. The released material focuses on the
+reusable engineering pattern and omits implementation details that require
+separate review.

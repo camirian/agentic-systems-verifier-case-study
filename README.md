@@ -4,8 +4,6 @@ A public case study for an agentic verification workflow that connects systems e
 
 This repository intentionally contains no production source code, datasets, copied standards material, grant material, cloud deployment files, credentials, or build logs. It is a sanitized portfolio artifact that explains the engineering approach at a public boundary.
 
-[Watch the demo](https://youtu.be/zYuLUAMb0So)
-
 ## What This Shows
 
 - Agentic review of systems-engineering artifacts
