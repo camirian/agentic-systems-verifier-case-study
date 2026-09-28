@@ -12,11 +12,16 @@ Document a public-safe case study for an agentic systems verification workflow.
 
 ## Public Boundary
 
-This repository contains curated narrative documentation only. Public artifacts must stay limited to case-study explanation, architecture pattern, release boundary notes, and links to public demos.
+This repository contains curated narrative documentation only. The earlier
+demo is unavailable; the reported behavior is historical narrative and cannot
+be reproduced or independently verified from this repository. Public artifacts
+stay limited to case-study explanation, the architecture pattern, and release
+boundary notes.
 
 ## Success Criteria
 
-- The case study explains the problem, architecture pattern, and demonstrated behavior.
+- The case study explains the problem and architecture pattern, and labels
+  historical behavior descriptions as unverified narrative.
 - The repo remains safe to inspect without private implementation context.
 - Pre-release checks pass before public updates.
 

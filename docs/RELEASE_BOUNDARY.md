@@ -16,7 +16,7 @@ This case study is intentionally limited to public-safe explanatory material.
 
 - public problem framing
 - architecture pattern summary
-- demo link
+- this explanatory boundary document
 - lessons learned
 - explicit statement of what is not released
 

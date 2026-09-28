@@ -1,21 +1,31 @@
 # Agentic Systems Verifier Case Study
 
-A public case study for an agentic verification workflow that connects systems engineering, model-based architecture review, and retrieval-augmented evaluation.
+A documentation-only public case study presenting a historical, unverified
+account of a conceptual agentic verification pattern for systems engineering,
+model-based architecture review, and retrieval-augmented evaluation. No
+implementation or experiment artifacts are published here to verify that
+workflow.
 
 This repository intentionally contains no production source code, datasets, copied standards material, grant material, cloud deployment files, credentials, or build logs. It is a sanitized portfolio artifact that explains the engineering approach at a public boundary.
 
-## What This Shows
+## What This Case Study Describes
 
-- Agentic review of systems-engineering artifacts
-- RAG-grounded evidence selection for technical review
+The following are topics in the historical account, not independently verified
+capabilities of code available in this repository.
+
+- An agentic review workflow for systems-engineering artifacts
+- Evidence selection described as retrieval augmented generation
 - Traceability and faithfulness checks across architecture inputs
 - A public-safe architecture pattern rather than a source dump
 
-## Problem
+## Problem Framing (Not Evaluated Here)
 
-Complex cyber-physical systems produce requirements, architecture models, design assumptions, and verification evidence across multiple tools. Reviewing those artifacts manually is slow, error-prone, and difficult to scale.
+The historical account is motivated by a general proposition: cyber-physical
+engineering reviews can involve requirements, architecture models, design
+assumptions, and verification evidence across multiple tools. This repository
+does not measure the review effort, error rate, or scalability of that process.
 
-The project explored how an agentic verification workflow can help:
+The historical account describes a proposed workflow that could:
 
 - parse structured architecture inputs
 - retrieve relevant requirement context
@@ -25,7 +35,7 @@ The project explored how an agentic verification workflow can help:
 
 ## Architecture Pattern
 
-The demonstrated pattern used modular layers:
+The historical account describes these conceptual layers:
 
 1. Ingestion layer for source documents and structured model artifacts.
 2. Parsing layer for model-oriented text and requirement-like records.
@@ -35,11 +45,12 @@ The demonstrated pattern used modular layers:
 
 The public takeaway is the pattern, not a full implementation dump.
 
-## What Was Demonstrated
+## Historical Behavior Descriptions
 
-The behavior below was shown in the linked demo. This repository documents the
-pattern; it does not republish the implementation, so these are descriptions of
-demonstrated behavior, not benchmarked metrics.
+The earlier demo is no longer available. The behavior below is a historical
+narrative account; this repository contains no implementation, dataset, run
+logs, scores, or demo with which to reproduce or independently verify it.
+These are not benchmarked results.
 
 - Agentic decomposition of a systems-engineering review task.
 - Retrieval-augmented evidence grounding.
@@ -52,7 +63,9 @@ and [docs/RELEASE_BOUNDARY.md](docs/RELEASE_BOUNDARY.md).
 
 ## Primary User
 
-The primary user is a technical reviewer, systems engineer, or portfolio reviewer who needs to understand whether the demonstrated verifier pattern keeps evidence visible while preserving a public release boundary. The job-to-be-done is to assess the workflow shape without requiring access to private source material. A success signal is that the reviewer can explain the problem, architecture pattern, human-review role, and excluded materials from the public docs alone.
+The intended reader is a technical reviewer, systems engineer, or portfolio
+reviewer assessing the described workflow and public release boundary. This
+repository reports no external user validation or measured success signal.
 
 ## Repo Verification Path
 
@@ -62,7 +75,10 @@ This repo is documentation-only (plus one stdlib verification script). The quick
 python3 scripts/verify_public.py
 ```
 
-It resolves internal markdown links and scans for forbidden patterns; see `VERIFICATION_PLAN.md` for the full check list.
+It resolves internal markdown links and scans recognized text files for a
+limited set of credential patterns. It does not inspect `.env` file contents;
+the manual release review remains required. See `VERIFICATION_PLAN.md` for the
+exact scope.
 
 ## What Is Not Included
 

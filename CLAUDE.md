@@ -16,8 +16,9 @@ credentials, and no build logs** in this repo (`README.md:5`,
 
 ## Repository map
 
-- `README.md` — public landing page: problem, architecture pattern, demonstrated
-  behavior, primary user, verification path, exclusions, related public work.
+- `README.md` — public landing page: problem, architecture pattern, historical
+  behavior narrative, intended reader, verification path, exclusions, related
+  public work.
 - `SPEC.md` — goal, non-goals, public boundary, success criteria.
 - `docs/CASE_STUDY.md` — narrative workflow (normalize → extract → retrieve →
   bounded model assessment → score → human review) and engineering lessons.
@@ -41,10 +42,14 @@ credentials, and no build logs** in this repo (`README.md:5`,
 
 ## Claim discipline (critical)
 
-Public language must stay **case-study / pattern / demonstrated / decision-support**
-wording. Do **not** add production-readiness, compliance, certification, safety,
-or "replaces human review" claims (`SPEC.md:9-11`, `PRE_RELEASE_CHECKLIST.md:5`).
-Every capability claim must map to evidence already in this repo.
+Public language must stay **case-study / pattern / decision-support** wording.
+The earlier demo is unavailable, so historical behavior descriptions cannot be
+reproduced or independently verified from this repo. Do not present them as
+current demonstrations or measured evidence. Do **not** add
+production-readiness, compliance, certification, safety, or autonomous final
+engineering-review claims (`SPEC.md:9-11`, `PRE_RELEASE_CHECKLIST.md:5`).
+Claims must map to current repository evidence or be labeled as unverified
+narrative.
 
 ## Verification
 
@@ -57,8 +62,9 @@ lives at `scripts/verify_public.py` and is the runnable verification path:
 python3 scripts/verify_public.py
 ```
 
-It resolves internal markdown links and scans for forbidden patterns (`.env`,
-credentials, API keys). It exits non-zero on failure. Run it
+It resolves internal markdown links and scans recognized text files for a
+limited set of credential patterns. It does not scan `.env` files or their
+contents. It exits non-zero on failure. Run it
 after any doc change, then complete the manual boundary review in
 `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` before publishing.
 

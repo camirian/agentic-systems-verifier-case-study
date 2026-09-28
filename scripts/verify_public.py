@@ -11,8 +11,9 @@ Checks performed:
      file in the repo. (Inline-code prose citations such as `README.md:5` are
      evidence footnotes, not links, and are intentionally not checked.)
   2. Forbidden-pattern scan.
-     Tracked text files must not contain secrets, credentials, API keys, or
-     `.env` contents per SECURITY.md.
+     Recognized text files found in the working tree must not match the limited
+     credential patterns below. The scan does not inspect `.env` files or their
+     contents, binary files, external links, or every possible secret format.
 
 Exits 0 if all checks pass, 1 otherwise. This replaces the previously
 documented `repo_preflight.py`, which was not present in this repo.
@@ -34,7 +35,7 @@ TEXT_SUFFIXES = {".md", ".py", ".yml", ".yaml", ".txt", ".cfg", ".toml", ".json"
 # Markdown link: [text](target)
 MD_LINK_RE = re.compile(r"\[[^\]]*\]\(([^)]+)\)")
 
-# Forbidden patterns: secrets, keys, credentials, env contents.
+# Limited credential patterns checked in recognized text files.
 FORBIDDEN = [
     (re.compile(r"AKIA[0-9A-Z]{16}"), "AWS access key id"),
     (re.compile(r"-----BEGIN [A-Z ]*PRIVATE KEY-----"), "private key block"),
