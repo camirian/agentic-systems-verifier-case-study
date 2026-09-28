@@ -13,17 +13,17 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 
 ### Facts
 
-- This repository is a public case study for an agentic systems verification
-  workflow that combines systems-engineering review, model-based architecture
-  review, and retrieval-augmented evaluation. Evidence: `README.md:3`.
+- This repository is a public case study presenting a historical, unverified
+  account of a conceptual agentic verification pattern. It does not establish
+  that the workflow was implemented or evaluated. Evidence: README opening description and "Historical Behavior Descriptions" section.
 - The repository intentionally excludes production source code, datasets, copied
   standards material, grant material, cloud deployment files, credentials, and
-  build logs. Evidence: `README.md:5`, `docs/RELEASE_BOUNDARY.md:5-13`.
-- The public artifact is documentation plus a public demo link, not an
-  implementation dump. Evidence: `README.md:38`, `docs/CASE_STUDY.md:36`.
-- The primary user is a technical reviewer, systems engineer, or portfolio
-  reviewer evaluating whether the workflow shape preserves evidence visibility
-  and the public-release boundary. Evidence: `README.md:50`.
+  build logs. Evidence: README opening boundary statement and "What Is Not Included"; `docs/RELEASE_BOUNDARY.md:5-13`.
+- The public artifact is documentation, not an implementation dump. The
+  previously available demo was removed; no demo link is currently published.
+- The intended reader is a technical reviewer, systems engineer, or portfolio
+  reviewer assessing the described workflow and public-release boundary.
+  Evidence: README section "Primary User".
 
 ### Assumptions
 
@@ -31,7 +31,8 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
   be imported without a separate public-surface audit.
 - The current release goal is a safe, credible public portfolio artifact, not a
   runnable verifier product.
-- The referenced public demo remains intentionally public and approved.
+- No demo is currently available. Any future demo requires a fresh public-boundary
+  review before it is linked here.
 
 ### Recommendations
 
@@ -49,16 +50,17 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 - `AGENTS.md` requires synthetic, public-safe examples, bounded claims, and
   verification of README links and release-boundary docs after changes.
   Evidence: `AGENTS.md:5-9`.
-- `README.md` describes the problem, architecture pattern, demonstrated
-  behavior, public user, verification path, exclusions, public artifacts, and
-  related public work. Evidence: `README.md:16,28,40,48,52,56,65,70`.
+- `README.md` describes the problem framing, conceptual architecture pattern,
+  historical behavior narrative, intended reader, verification path, exclusions,
+  public artifacts, and related public work. Evidence: the matching README
+  section headings.
 - `SPEC.md` defines the goal as documenting a public-safe case study and
   excludes original source code, private datasets, copied standards material,
   provider configuration, internal planning notes, private prompts, credentials,
   and machine-specific setup. Evidence: `SPEC.md:5,9-11`.
-- `docs/CASE_STUDY.md` defines the workflow as normalization, extraction,
-  retrieval, bounded model assessment, scoring, and human review. Evidence:
-  `docs/CASE_STUDY.md:11-16`.
+- `docs/CASE_STUDY.md` describes those stages as an unverified historical
+  narrative, not as reproducible implementation behavior. Evidence:
+  `docs/CASE_STUDY.md` sections "Evidence boundary" and "Described Workflow".
 - `docs/RELEASE_BOUNDARY.md` lists excluded and included material. Evidence:
   `docs/RELEASE_BOUNDARY.md:5-13,15-21`.
 - `VERIFICATION_PLAN.md` documents a public-export gate plus manual checks.
@@ -87,8 +89,8 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 - Provide a self-contained, stdlib-only verification command (done in the first
   slice: `scripts/verify_public.py`) and repoint `VERIFICATION_PLAN.md` and
   `PRE_RELEASE_CHECKLIST.md` at it.
-- Keep future claims bounded to case-study / pattern / demonstrated /
-  decision-support wording.
+- Keep future claims bounded to conceptual, historical-unverified,
+  decision-support, planned, or excluded wording as applicable.
 - Record release evidence after each public update: files changed, links
   checked, verification result, manual boundary review, remaining risk.
 
@@ -96,18 +98,21 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 
 ### Facts
 
-- Target users are technical reviewers, systems engineers, and portfolio
-  reviewers. Evidence: `README.md:50`.
-- The case study must explain the problem, architecture pattern, demonstrated
-  behavior, and excluded material. Evidence: `SPEC.md:19-21`.
+- The intended reader is a technical reviewer, systems engineer, or portfolio
+  reviewer; the repo reports no measured or external user outcome. Evidence:
+  README section "Primary User".
+- The case study must explain the problem and architecture pattern, label
+  historical behavior descriptions as unverified narrative, and identify
+  excluded material. Evidence: `SPEC.md:23-26`.
 - Public artifacts are `docs/CASE_STUDY.md` and `docs/RELEASE_BOUNDARY.md`.
-  Evidence: `README.md:67-68`.
+  Evidence: README section "Public Artifacts".
 
 ### Assumptions
 
 - Reviewers need enough detail to judge engineering quality without private
   corpora, code, prompts, provider settings, or logs.
-- The repo should stay useful even if the demo video becomes unavailable.
+- The repo should remain clear without a demo; historical behavior descriptions
+  are narrative and cannot be independently verified from this repository.
 
 ### Recommendations
 
@@ -133,10 +138,12 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 
 ### Facts
 
-- The case study presents an AI-assisted workflow where model output is a review
-  candidate and humans stay in the loop. Evidence: `docs/CASE_STUDY.md:7,16,21`.
+- The case study describes an AI-assisted workflow where model output is a review
+  candidate and humans stay in the loop; these are historical narrative claims,
+  not independently verified behavior. Evidence: `docs/CASE_STUDY.md` sections
+  "Evidence boundary" and "Described Workflow".
 - The repo currently contains documentation, not an AI system implementation.
-  Evidence: `README.md:5`.
+  Evidence: README opening boundary statement.
 
 ### Assumptions
 
@@ -157,13 +164,11 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
   boundaries; require public-surface review for any synced material.
 - **Small batches:** first useful slice is a self-contained verification + claim
   audit, not a feature build.
-- **User-centricity:** named user = technical reviewer; JTBD = understand the
-  verifier pattern and release boundary without private context; success signal
-  = reviewer distinguishes demonstrated behavior from excluded implementation.
-- **Internal platform:** provide one documented path for public-export preflight
-  — now satisfied by `scripts/verify_public.py`.
-- **Closed DORA gap:** a self-contained, runnable public-export command now
-  exists in this repo (was previously missing).
+- **User-centricity:** intended reader = technical reviewer; job = understand
+  the described verifier pattern and release boundary without private context.
+  No external user validation or measured success signal is available.
+- **Internal platform:** a documented local check exists at `scripts/verify_public.py`; it is a limited pattern/link check, not a comprehensive secret scanner.
+- **Closed DORA gap:** a self-contained stdlib link/pattern check now exists; manual release review remains required for `.env` contents, binary files, external links, and unrecognized secret formats.
 
 ## 5. Architecture Plan
 
@@ -172,8 +177,9 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 - Existing architecture is a documentation-only release surface: `README.md`,
   `SPEC.md`, `VERIFICATION_PLAN.md`, `PRE_RELEASE_CHECKLIST.md`, `SECURITY.md`,
   and `docs/`.
-- The described verifier pattern has ingestion, parsing, retrieval,
-  verification, and review-UI layers. Evidence: `README.md:32-36`.
+- The conceptual pattern is described with ingestion, parsing, retrieval,
+  verification, and review-UI layers. These are not verified implementation
+  details. Evidence: README section "Architecture Pattern".
 
 ### Assumptions
 
@@ -200,11 +206,11 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 
 ### Recommendations
 
-- **M1 — Public-readiness hardening.** Acceptance: all internal links resolve,
-  the preflight path is executable or explicitly external, claims map to
-  evidence. (Substantially delivered this slice.)
-- **M2 — Claim taxonomy.** Acceptance: docs distinguish demonstrated, public
-  inference, planned, and excluded claims.
+- **M1 — Public-readiness hardening.** Acceptance: internal links resolve, the
+  local check is runnable, and claims are evidence-bounded. The current PR
+  addresses historical-claim disclosure; publication still requires batch review.
+- **M2 — Claim taxonomy.** Remaining: distinguish conceptual, planned, excluded,
+  and historical-unverified claims if the case-study scope expands.
 - **M3 — Release evidence template.** Acceptance: maintainers can record
   verification result, manual audit, link checks, artifact-boundary check, and
   remaining risk per release.
@@ -239,7 +245,7 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 | --- | --- | --- | --- | --- | --- |
 | P0 | Replace missing preflight entry point | `scripts/verify_public.py`, `VERIFICATION_PLAN.md`, `PRE_RELEASE_CHECKLIST.md` | Update verification docs | `python3 scripts/verify_public.py` | Public verifier command is runnable in-repo (**done this slice**) |
 | P0 | Internal-link / file-reference audit | `README.md`, `docs/*.md` | Fix links if needed | `scripts/verify_public.py` link resolver | No broken internal links |
-| P0 | Claim-evidence matrix | `README.md`, `docs/CASE_STUDY.md` | Add table/checklist | Manual review | Every claim maps to evidence or is downgraded |
+| P0 | Historical narrative disclosure | `README.md`, `docs/CASE_STUDY.md` | Clarify evidence boundary | Manual review | Historical claims are not presented as verified capabilities (**done this slice**) |
 | P0 | Release evidence template | `PRE_RELEASE_CHECKLIST.md` / `docs/RELEASE_BOUNDARY.md` | Checklist update | Manual review | Release decision is replayable |
 | P1 | Generated-vs-source policy | `docs/RELEASE_BOUNDARY.md` | Boundary docs | Manual inspection | Generated reports/logs excluded unless approved |
 | P1 | Synthetic-fixture policy | `SPEC.md` | Spec update | Public-boundary review | Future examples cannot use private data |
@@ -251,7 +257,7 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 ### Facts
 
 - The repo is documentation-only plus one stdlib verification script. Evidence:
-  `README.md:54`.
+  README section "Repo Verification Path".
 - Release verification is a public-export gate plus manual checks. Evidence:
   `VERIFICATION_PLAN.md:5,11-15`.
 
@@ -262,15 +268,17 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 ### Recommendations
 
 - **Automated (runnable now):** `python3 scripts/verify_public.py` resolves
-  internal markdown links and scans for forbidden patterns; exits non-zero on
-  failure.
+  relative markdown links and scans recognized working-tree text files for a
+  limited set of credential patterns; it has documented coverage gaps.
 - **Documentation checks:** verify internal links, file references, and that
   excluded-material wording remains present.
-- **Public-surface audit:** scan for `.env`, credentials, tokens, customer data,
-  copied standards, grant material, and build logs.
+- **Public-surface audit:** inspect filenames and relevant artifacts for
+  credentials, customer data, copied standards, grant material, and build logs;
+  the local script does not inspect `.env` contents.
 - **Artifact-boundary checks:** if packaging, list the manifest, extract to a
   temp dir, scan contents, confirm only reviewer-useful files are included.
-- **Claim accuracy:** maintain a claim table with source-line evidence.
+- **Claim accuracy:** label historical claims as unverified narrative; review
+  new claims against source-line evidence before publication.
 - **Regression loop after any doc change:** run `verify_public.py` → public-
   surface scan → claim review → release checklist update.
 
@@ -309,7 +317,7 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 - **Claim inflation:** public language may imply production readiness.
 - **Verification gap (mitigated):** the prior `repo_preflight.py` reference was
   unavailable; now replaced by an in-repo script.
-- **Link rot:** demo and related-repo links may drift.
+- **Link rot:** related-repository links may drift; there is no current demo link.
 - **Provenance ambiguity:** future private syncs could copy internal context.
 - **Generated-artifact leakage:** preflight/build logs or reports could be
   committed accidentally.
@@ -318,17 +326,18 @@ Each item below is tagged **Facts** (repo evidence), **Assumptions**, or
 
 - Should the repo stay documentation-only permanently, or add a synthetic
   runnable mini-demo?
-- Should external public links (demo video, related repos) be checked online by
-  the verifier, or remain manual to keep the script offline/stdlib-only?
+- Should external related-repository links be checked online by the verifier,
+  or remain manual to keep the script offline/stdlib-only?
 - Where should release evidence live — repo docs, PR descriptions, or generated
   local reports?
 
-## 12. Recommended First Implementation Slice
+## 12. Completed First Implementation Slice (Retrospective)
 
-### Recommendation
+### Historical Decision
 
-Ship a **self-contained public-release verification script**, then repoint the
-documented release gate at it.
+The repository added a **self-contained public-release verification script**
+and repointed the documented release gate at it. This slice is complete; the
+current scope and limits are described in `VERIFICATION_PLAN.md`.
 
 ### Why it is first
 
@@ -340,13 +349,14 @@ documented release gate at it.
 
 ### What it changes
 
-- Add `scripts/verify_public.py` (Python stdlib only): resolves every internal
+- The slice added `scripts/verify_public.py` (Python stdlib only): resolves every internal
   markdown link and fails on missing targets; scans
-  tracked text files for forbidden patterns (`.env` contents, API keys,
-  credentials); exits non-zero on any failure.
-- Repoint `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` from the missing
+  recognized text files found in the working tree for a limited set of
+  credential patterns; exits non-zero on any failure. It does not inspect `.env`
+  files or contents, binary files, external links, or every secret format.
+- It repointed `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` from the missing
   `repo_preflight.py` to `python3 scripts/verify_public.py`.
-- Document the command in `CLAUDE.md` and `README.md`.
+- It documented the command in `CLAUDE.md` and `README.md`.
 
 ### What it does NOT change
 
@@ -354,7 +364,7 @@ documented release gate at it.
   configuration, no third-party dependencies, no generated reports committed by
   default.
 
-### Acceptance criteria
+### Original Acceptance Criteria
 
 - `python3 scripts/verify_public.py` runs with the system Python (stdlib only)
   and exits `0` on the current clean repo.
@@ -363,7 +373,7 @@ documented release gate at it.
 - `VERIFICATION_PLAN.md` and `PRE_RELEASE_CHECKLIST.md` reference a command that
   actually exists in the repo.
 
-### Verification path
+### Recorded Verification Path
 
 1. `python3 scripts/verify_public.py` (expect exit 0, all checks pass).
 2. `git diff --check` (no whitespace errors).

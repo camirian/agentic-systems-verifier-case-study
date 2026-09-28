@@ -1,19 +1,23 @@
 # Master Plan: Agentic Systems Verifier Case Study
 
+> **Historical and superseded.** The canonical current plan is
+> [`docs/MASTER_PLAN.md`](docs/MASTER_PLAN.md). This file is retained for
+> history and may contain stale statements; do not use it as current status.
+
 ## 1. Executive Summary
 
 ### Facts
 
 - This repository is a public case study for an agentic systems verification workflow that combines systems engineering review, model-based architecture review, and retrieval-augmented evaluation. Evidence: `README.md:3`.
 - The repository intentionally excludes production source code, datasets, copied standards material, grant material, cloud deployment files, credentials, and build logs. Evidence: `README.md:5`, `docs/RELEASE_BOUNDARY.md:5`.
-- The public artifact is documentation plus a public demo link, not an implementation dump. Evidence: `README.md:38`, `docs/CASE_STUDY.md:36`.
-- The primary user is a technical reviewer, systems engineer, or portfolio reviewer evaluating whether the workflow shape preserves evidence visibility and public-release boundaries. Evidence: `README.md:50`.
+- The public artifact is documentation, not an implementation dump. The earlier demo was removed; historical workflow claims are unverified narrative.
+- The intended reader is a technical reviewer, systems engineer, or portfolio reviewer assessing the described workflow and public-release boundary. No external user validation is reported.
 
 ### Assumptions
 
 - The private implementation, if any, remains outside this public candidate and must not be imported into this repo without a separate public-surface audit.
 - The current release goal is a safe, credible public portfolio artifact rather than a runnable verifier product.
-- The referenced public demo remains intentionally public and approved for inclusion.
+- No demo is currently available. Any future demo needs a fresh public-boundary review.
 
 ### Recommendations
 
@@ -26,7 +30,7 @@
 ### Facts
 
 - `AGENTS.md` is present and requires synthetic, public-safe examples, bounded claims, and verification of README links and release-boundary docs after changes. Evidence: `AGENTS.md:1`, `AGENTS.md:5`.
-- `README.md` describes the problem, architecture pattern, demonstrated behavior, public user, verification path, exclusions, public artifacts, and related public work. Evidence: `README.md:16`, `README.md:31`, `README.md:45`, `README.md:50`, `README.md:54`, `README.md:64`.
+- `README.md` describes the problem, conceptual architecture pattern, historical behavior narrative, intended reader, verification path, exclusions, public artifacts, and related public work.
 - `SPEC.md` defines the goal as documenting a public-safe case study and explicitly excludes original source code, private datasets, copied standards material, provider configuration, internal planning notes, private prompts, credentials, and machine-specific setup. Evidence: `SPEC.md:5`, `SPEC.md:9`, `SPEC.md:11`.
 - `docs/CASE_STUDY.md` defines the workflow as normalization, extraction, retrieval, bounded model assessment, scoring, and human review. Evidence: `docs/CASE_STUDY.md:11`.
 - `docs/RELEASE_BOUNDARY.md` lists excluded and included material. Evidence: `docs/RELEASE_BOUNDARY.md:5`, `docs/RELEASE_BOUNDARY.md:17`.
@@ -50,13 +54,13 @@
 ### Facts
 
 - Target users are technical reviewers, systems engineers, and portfolio reviewers. Evidence: `README.md:50`.
-- The case study must explain the problem, architecture pattern, demonstrated behavior, and excluded material. Evidence: `SPEC.md:19`.
+- The case study must explain the problem and architecture pattern, label historical behavior as unverified narrative, and identify excluded material. Evidence: `SPEC.md:22-25`.
 - Public artifacts are `docs/CASE_STUDY.md` and `docs/RELEASE_BOUNDARY.md`. Evidence: `README.md:64`.
 
 ### Assumptions
 
 - Reviewers need enough detail to evaluate engineering judgment without access to private corpora, implementation code, prompts, provider settings, or logs.
-- The repo should remain useful even if the demo video is unavailable, by preserving a complete written description.
+- The repo should remain clear without a demo. Historical behavior is unverified narrative.
 
 ### Recommendations
 
@@ -116,7 +120,7 @@
   - Record owner, freshness, and public approval for each source.
 - AI-accessible internal data:
   - Agents may use only this repo's public docs, approved synthetic examples, and public links.
-  - Agents may not use private implementation notes or private strategy as source material for public docs.
+  - Agents may not use private implementation notes or internal strategic notes as source material for public docs.
 - Version control:
   - Keep commits small and reviewable.
   - Preserve generated-vs-source boundaries.
@@ -126,7 +130,7 @@
 - User-centricity:
   - Named user: technical reviewer.
   - Job-to-be-done: understand the verifier pattern and release boundary without private context.
-  - Success signal: reviewer can distinguish demonstrated behavior from excluded implementation.
+  - Intended outcome: a reviewer can distinguish historical narrative from excluded implementation. No user outcome has been measured.
   - Feedback loop: public issue or review comment tagged as claim clarity, boundary clarity, or missing evidence.
 - Internal platform:
   - Provide one command or one documented path for public-export preflight.
@@ -160,7 +164,7 @@
 - Data flow for future runnable demo:
   - Synthetic source artifact -> parser -> retriever -> bounded model/evaluator -> evidence-linked review report.
 - External integrations:
-  - Public demo video and public related repositories only.
+  - Public related repositories only; no demo is currently available.
   - Model provider integration is out of scope unless fully synthetic and credential-free.
 - Configuration and secrets:
   - No `.env`, tokens, provider configs, customer material, machine-specific paths, or private source references.
@@ -256,7 +260,7 @@
 ### Recommendations
 
 - Documentation checks:
-  - Check internal links and public demo links.
+  - Check internal links and confirm external links are intentional; no demo is currently available.
   - Verify all file references exist.
   - Verify excluded-material wording remains present.
 - Public-surface audit:
